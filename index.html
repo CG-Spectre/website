@@ -24,9 +24,118 @@
                 
                 
             </div>
+            <div id="middleDiv">
+                <p id="middleDivH">SpectreDev</p>
+                <p id="middleDivB">Hi I'm SpectreDev and I do coding stuff!</p>
+            </div>
+            <a id="downButton" href="#sp">
+                <i class="ph-arrow-down"></i>
+            </a>
         </div>
     </div>
+    <div id="sp">
+        <div class="infoDiv">
+            <p class="subtitle">Skills</p>
+            <p class="bodyText">I have experience with photoshop, game development, web development, 3D software, software development, and more!</p>
+        </div>
+        
+    </div>
     <style>
+        html, body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            overflow-x:hidden;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        *::-webkit-scrollbar{
+            background-color: transparent;
+            width: 5px;
+            height: 0;
+            overflow-y: hidden;
+        }
+        *::-webkit-scrollbar-thumb{
+            background-color: rgba(212, 212, 212, 0.479);
+            border-radius: 10px;
+            
+        }
+        *::-webkit-scrollbar-thumb:hover{
+            background-color: rgba(212, 212, 212, 0.856);
+        }
+        body{
+            background-image: url("./img/backgroundTexture.png");
+            background-repeat: repeat;
+            background-position: center;
+        }
+        #sp{
+            width: 100vw;
+            position: absolute;
+            top: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        @keyframes materialize {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        #downButton{
+            cursor: pointer;
+            position: absolute;
+            top: calc(100vh - 100px);
+            background-color: rgba(0, 0, 0, 0.61);
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            font-size: 50px;
+            animation: materialize 2s;
+        }
+        #middleDivH{
+            font-size: 45px;
+            animation: leftright 2s;
+        }
+        @keyframes leftright {
+            0%{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes rightleft {
+            0%{
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        #middleDivB{
+            animation: rightleft 2s;
+            margin-top: 0;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.671);
+        }
+        #middleDiv{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         a{
             text-decoration: none;
         }
@@ -46,6 +155,9 @@
             background-size: cover;
         }
         #fpOverlay{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             left: 0;
             top: 0;
@@ -65,7 +177,7 @@
             left: 0;
             top: 0;
             font-size: 30px;
-            animation: moveInLogo 1s;
+            animation: moveInLogo 2s;
         }
         #logoContainer p{
             color: rgb(255, 255, 255);
