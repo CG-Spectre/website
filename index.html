@@ -38,9 +38,140 @@
             <p class="subtitle">Skills</p>
             <p class="bodyText">I have experience with photoshop, game development, web development, 3D software, software development, and more!</p>
         </div>
-        
+        <div class="infoDiv">
+            <p class="subtitle">Projects</p>
+        </div>
+        <div id="projects">
+            <a class="project">
+                <p class="pTitle">Blaze Client</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(2, 114, 2);">Done. Coninuing to update.</p>
+            </a>
+            <a class="project">
+                <p class="pTitle">Spectral Bot</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(114, 2, 2);">Done. Support ended.</p>
+            </a>
+            <a class="project">
+                <p class="pTitle">CoHance Tai</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(2, 114, 2);">Done. Continuing to update.</p>
+            </a>
+            <a class="project">
+                <p class="pTitle">CHAuth</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(2, 114, 2);">In progress.</p>
+            </a>
+            <a class="project">
+                <p class="pTitle">CoCord</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(112, 114, 2);">Paused.</p>
+            </a>
+            <a class="project">
+                <p class="pTitle">CoHance Social Media</p>
+                <img src="./img/projects/blazeclient.png" alt="">
+                <p class="pStatus" style="background-color: rgb(112, 114, 2);">Paused.</p>
+            </a>
+        </div>
+        <div class="contact">
+            <p class="subtitle">Contact</p>
+            <p class="bodyText">You may contact me through my email spectrecgames@gmail.com or join my <a style="text-decoration: underline;" href="https://discord.gg/KJjJdzU3Ez">Discord</a> and DM SpectreDev#4445.</p>
+        </div>
     </div>
+    <script>
+        let currentOffset = 0;
+        let maxOffset = 100;
+
+        window.onload = function(){
+            let totalWidth = 0;
+            let repeatTimes;
+            let itemArray = [];
+            [...Array.from(document.getElementById("projects").children)].forEach((e)=>{
+                totalWidth += 260;
+                itemArray[itemArray.length] = e;
+            });
+            repeatTimes = Math.round(window.innerWidth*2/totalWidth+0.5) - 1;
+            document.getElementById("projects").style.width = ((repeatTimes+1)*totalWidth)+"px";
+            for(let i = 0; i < repeatTimes; i++){
+                for(d in itemArray){
+                    
+                    document.getElementById("projects").appendChild(itemArray[d].cloneNode());
+                    console.log(itemArray[d])
+                }
+            }
+            
+            startBelt();
+            
+        }
+        
+        
+        
+        
+        function startBelt(){
+            currentOffset += 250;
+            document.getElementById("projects").style.transform = "translateX("+currentOffset+"px)";
+            setTimeout(()=>{
+                startBelt();
+            }, 3000)
+        }
+        
+    </script>
     <style>
+        .project img{
+            width: 170px;
+            border-radius: 15px;
+            
+        }
+        .project{
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 100%;
+            max-width: 250px;
+            width: calc(100vw - 10px);
+            max-height: 250px;
+            height: calc(100vw - 10px);
+            border-radius: 15px;
+        }
+        .pStatus{
+            margin: 0;
+            width: fit-content;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        .pTitle{
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        #projects{
+            width: 100vw;
+            flex-wrap: wrap;
+            transition:transform linear 3s;
+            height: 300px;
+            position: relative;
+            display: flex;
+
+        }
+        .subtitle{
+            font-size: 35px;
+            width: fit-content;
+            max-width: 500px;
+            
+            width: min-content;
+        }
+        .bodyText{
+            font-size: 20px;
+            color: rgb(207, 207, 207);
+            width: fit-content;
+            max-width: 500px;
+        }
+        
         html, body{
             padding: 0;
             margin: 0;
@@ -54,7 +185,7 @@
             background-color: transparent;
             width: 5px;
             height: 0;
-            overflow-y: hidden;
+            
         }
         *::-webkit-scrollbar-thumb{
             background-color: rgba(212, 212, 212, 0.479);
@@ -76,6 +207,7 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+            overflow-x: hidden;
         }
         @keyframes materialize {
             0%{
@@ -140,7 +272,7 @@
             text-decoration: none;
         }
         *{
-            color: white;
+            color: rgb(218, 218, 218);
             font-family: 'Lexend Deca', sans-serif;
         }
         #fp{
