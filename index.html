@@ -48,42 +48,42 @@
         </div>
         <div id="projectsContainer">
             <div id="projects">
-                <a class="project">
+                <a class="project" href="https://blaze.cohancestudios.com">
                     <p class="pTitle">Blaze Client</p>
                     <img src="./img/projects/blazeclient.png" alt="">
                     <p class="pStatus" style="background-color: rgb(2, 114, 2);">Done. Coninuing to update.</p>
                 </a>
-                <a class="project">
+                <a class="project" style="cursor:not-allowed;">
                     <p class="pTitle">Spectral Bot</p>
                     <img src="./img/projects/spectral.png" alt="">
                     <p class="pStatus" style="background-color: rgb(114, 2, 2);">Done. Support ended.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://discord.gg/ZDRdumu692">
                     <p class="pTitle">CoHance Tai</p>
                     <img src="./img/projects/cht.png" alt="">
                     <p class="pStatus" style="background-color: rgb(2, 114, 2);">Done. Continuing to update.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://discord.gg/ZDRdumu692">
                     <p class="pTitle">CHAuth</p>
                     <img src="./img/projects/chauth.png" alt="">
                     <p class="pStatus" style="background-color: rgb(2, 114, 2);">In progress.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://discord.gg/ZDRdumu692">
                     <p class="pTitle">CoCord</p>
                     <img src="./img/projects/cocord.png" alt="">
                     <p class="pStatus" style="background-color: rgb(112, 114, 2);">Paused.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://discord.gg/ZDRdumu692">
                     <p class="pTitle">CoHance Social Media</p>
                     <img src="./img/projects/ch.png" alt="">
                     <p class="pStatus" style="background-color: rgb(112, 114, 2);">Paused.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://discord.gg/ZDRdumu692">
                     <p class="pTitle">CHMC</p>
                     <img src="./img/projects/chmc.png" alt="">
                     <p class="pStatus" style="background-color: rgb(112, 114, 2);">Paused.</p>
                 </a>
-                <a class="project">
+                <a class="project" href="https://www.firstinspires.org/robotics/ftc">
                     <p class="pTitle">FTC Team 6200</p>
                     <img src="./img/projects/ftc.jpg" alt="">
                     <p class="pStatus" style="background-color: rgb(2, 114, 2);">Participating.</p>
@@ -96,10 +96,13 @@
         </div>
         <div class="contact">
             <p class="subtitle">Contact</p>
-            <p class="bodyText">You may contact me through my email spectrecgames@gmail.com or join my <a style="text-decoration: underline;" href="https://discord.gg/KJjJdzU3Ez">Discord</a> and DM SpectreDev#4445.</p>
+            <p class="bodyText">You may contact me through my email <a id="emailButton" style="cursor: pointer; text-decoration:underline;" href="mailto:spectrecgames@gmail.com?subject=I saw your website!">spectrecgames@gmail.com</a> or join my <a style="text-decoration: underline;" href="https://discord.gg/KJjJdzU3Ez">Discord</a> and DM SpectreDev#4445.</p>
         </div>
     </div>
     <script>
+        document.getElementById("emailButton").addEventListener("click", ()=>{
+            
+        });
         let currentOffset = 0;
         let maxOffset = 100;
         let currentContainerOffset = 0;
